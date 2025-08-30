@@ -119,3 +119,11 @@ Standard for workload identity in distributed systems.
 ### SPIRE (SPIFFE Runtime Environment)
 
 Reference implementation of SPIFFE.
+
+### UUIDv7 (Universally Unique Identifier version 7)
+
+Time‑ordered UUID variant suited for high‑scale systems; preserves creation order while remaining globally unique.
+
+### ULID (Universally Unique Lexicographically Sortable Identifier)
+
+Time‑ordered, Base32 identifier alternative to UUIDs; lexicographically sortable.

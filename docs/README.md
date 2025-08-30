@@ -33,6 +33,7 @@
 
 - Problem framing: [problem/auto-id-problem-statement.md](./problem/auto-id-problem-statement.md)
 - Agent Card extensions (draft): [design/agent-card-extensions.md](./design/agent-card-extensions.md)
+- Identifiers & uniqueness: [design/identifiers-and-uniqueness.md](./design/identifiers-and-uniqueness.md)
 - Blockchain coordination addendum: [design/blockchain-coordination.md](./design/blockchain-coordination.md)
 - ERC‑8004 impact analysis: [erc-8004/erc-8004-impact.md](./erc-8004/erc-8004-impact.md)
 - Payments integration: [design/payments-integration.md](./design/payments-integration.md)
