@@ -1,0 +1,29 @@
+{
+  "type": "ReputationAttestation",
+  "schema": "https://auto.id/schemas/reputation-attestation/v1",
+  "issuer": "did:web:issuer.example",
+  "subject": "did:web:agent.example",
+  "event": {
+    "category": "reliability",
+    "name": "task_completed",
+    "severity": 1
+  },
+  "task": { "id": "a2a-task-1234", "contextId": "ctx-abc" },
+  "artifacts": [
+    {
+      "cid": "bafybeigdyrztw3exampleplaceholdercidaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "storage": "auto-drive",
+      "gatewayUri": "https://gateway.autonomys.xyz/bafybeigdyrztw3exampleplaceholdercidaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "evidence": [
+    {
+      "cid": "bafybeif2anotherplaceholdercidbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "storage": "auto-drive"
+    }
+  ],
+  "issuedAt": "2025-06-01T12:00:00Z",
+  "expiresAt": null
+}
