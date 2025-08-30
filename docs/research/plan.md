@@ -57,6 +57,14 @@ Purpose: deliver a practical, A2A‑native identity baseline with clear interfac
 
 6. Optional: ERC‑8004 compatibility
 7. Payments integration
+8. Deployment strategy (v1 → v2)
+
+   - Deliverables:
+
+     - EVM v1 contracts deployed on a low‑cost L2 + event schemas
+     - Domain v2 design draft (pallets, fees, XDM, operator registry)
+     - Dual‑write/migration plan: export, index, mirror events; cutover criteria
+     - Update Agent Card guidance to advertise both EVM and domain coordinates
 
    - Deliverables:
 

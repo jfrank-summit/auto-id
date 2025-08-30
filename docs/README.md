@@ -39,6 +39,7 @@
 - Payments integration: [design/payments-integration.md](./design/payments-integration.md)
 - Identity options evaluation matrix (template): [research/evaluation-matrix.md](./research/evaluation-matrix.md)
 - Potential execution plan: [research/plan.md](./research/plan.md)
+- Deployment architectures: [design/deployment-architectures.md](./design/deployment-architectures.md)
 
 ### Examples
 
