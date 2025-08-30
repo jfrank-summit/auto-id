@@ -1,17 +1,17 @@
 ## Auto‑ID: Blockchain Coordination Addendum
 
-Purpose: define how a blockchain can coordinate agent identity, reputation, and negative‑event sharing in a way that complements A2A.
+Purpose: define how a blockchain can coordinate agent identity, reputation, and negative‑event sharing in a way that complements [A2A](../glossary.md#a2a-agent-to-agent).
 
 ### Goals
 
-- Interoperate with A2A: discovery via Agent Card, standard auth schemes, JWT‑signed push, long‑running tasks
+- Interoperate with A2A: discovery via Agent Card, standard auth schemes, [JWT](../glossary.md#jwt-json-web-token)‑signed push, long‑running tasks
 - Provide portable, verifiable signals: identity anchoring, revocation, attestations, and aggregated reputation
 - Keep costs low by anchoring commitments on‑chain while storing rich evidence off‑chain
 
 ### On‑chain registry interface (minimal)
 
-- Subject identifier: URL or DID (e.g., `did:web`), optional additional ids (`did:key`, `did:pkh`)
-- Verification material pointer: JWKS URI or DID Document hash
+- Subject identifier: URL or [DID](../glossary.md#did-decentralized-identifier) (e.g., `did:web`), optional additional ids (`did:key`, `did:pkh`)
+- Verification material pointer: [JWKS](../glossary.md#jwks-json-web-key-set) URI or DID Document hash
 - Rotation nonce: monotonically increasing integer to invalidate prior keys
 - Optional stake and policy flags: for governance or risk weighting
 

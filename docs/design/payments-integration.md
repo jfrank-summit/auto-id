@@ -1,6 +1,6 @@
 ## Auto‑ID: Payments Integration
 
-Purpose: define how agents advertise pricing and accept payments, and how clients prove payment for A2A interactions and long‑running tasks, with support for both fiat processors and on‑chain payments.
+Purpose: define how agents advertise pricing and accept payments, and how clients prove payment for [A2A](../glossary.md#a2a-agent-to-agent) interactions and long‑running tasks, with support for both fiat processors and on‑chain payments.
 
 ### Goals
 
@@ -12,7 +12,7 @@ Purpose: define how agents advertise pricing and accept payments, and how client
 ### Design overview
 
 - Agents publish a Payment Policy in their Agent Card, including supported methods, currencies/tokens, pricing models, and billing endpoints.
-- Charges are tied to A2A task identifiers and artifact IDs; invoices and receipts are signed (JWS) and can be validated offline.
+- Charges are tied to A2A task identifiers and artifact IDs; invoices and receipts are signed ([JWS](../glossary.md#jws-json-web-signature)) and can be validated offline.
 - Fiat and crypto payment adapters are pluggable; receipts normalize to a common schema.
 - For crypto, small payments can use streaming or pre‑funded allowances; larger ones use invoice/escrow patterns.
 

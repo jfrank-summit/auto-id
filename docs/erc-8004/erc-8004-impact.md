@@ -1,13 +1,13 @@
 ## Auto‑ID: ERC‑8004 “Trustless Agents” — Impact on Design
 
-This note analyzes how ERC‑8004 (Trustless Agents) could influence Auto‑ID’s identity, reputation, and validation approach, and how it intersects with A2A. It complements [Problem Statement](../problem/auto-id-problem-statement.md) and [Blockchain coordination](../design/blockchain-coordination.md).
+This note analyzes how ERC‑8004 (Trustless Agents) could influence Auto‑ID’s identity, reputation, and validation approach, and how it intersects with [A2A](../glossary.md#a2a-agent-to-agent). It complements [Problem Statement](../problem/auto-id-problem-statement.md) and [Blockchain coordination](../design/blockchain-coordination.md).
 
 ### What ERC‑8004 proposes (summary)
 
 - Three lightweight, on‑chain registries that extend A2A for open, cross‑org trust:
   - Identity Registry: minimal on‑chain handle resolving to Agent Card, with `AgentID`, `AgentDomain` (RFC 8615 well‑known path), and `AgentAddress` (CAIP‑10)
   - Reputation Registry: pre‑authorization + feedback flow; store minimal on‑chain data, keep rich feedback off‑chain
-  - Validation Registry: generic hooks for inference validation (crypto‑economic) and cryptographic verification (e.g., TEEs, zk)
+  - Validation Registry: generic hooks for inference validation (crypto‑economic) and cryptographic verification (e.g., [TEEs](../glossary.md#tee-trusted-execution-environment), [zk](../glossary.md#zk-zero-knowledge))
 - Agents advertise in the Agent Card a `registrations` array (on‑chain entries) and supported `trustModels` for server roles
 
 References:

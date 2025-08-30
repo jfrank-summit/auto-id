@@ -7,7 +7,7 @@ Purpose: propose fields to capture multi‑scheme identity, on‑chain coordinat
 - `identifiers`: array of identifiers for the agent
   - Examples: `https://agent.example`, `did:web:agent.example`, `did:key:z6Mk...`
 - `auth`: declared authentication schemes and parameters
-  - Examples: `Bearer` (OAuth2 client credentials), `ApiKey`, `mTLS`, `JWT` (jwks_uri), `DIDVC`
+  - Examples: `Bearer` (OAuth2/OIDC client credentials), `ApiKey`, `mTLS`, `JWT` (jwks_uri), `DIDVC`
 - `jwks_uri`: HTTPS URL for JWKS when using JWT/JWS
 - `did_document_uri`: URL to a DID Document (or embedded document)
 - `registrations`: ERC‑8004 compatible on‑chain registrations (chain coordinates and proofs)

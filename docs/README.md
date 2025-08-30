@@ -51,6 +51,7 @@
 
 - Background: [references/agent-autonomy.md](./references/agent-autonomy.md)
 - Centralization limits: [references/centralization-limits-agent-autonomy.md](./references/centralization-limits-agent-autonomy.md)
+- Glossary: [glossary.md](./glossary.md)
 
 ### Suggested reading order
 
