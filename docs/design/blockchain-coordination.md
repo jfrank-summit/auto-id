@@ -6,9 +6,12 @@ Purpose: define how a blockchain can coordinate agent identity, reputation, and 
 
 - Interoperate with A2A: discovery via Agent Card, standard auth schemes, [JWT](../glossary.md#jwt-json-web-token)‑signed push, long‑running tasks
 - Provide portable, verifiable signals: identity anchoring, revocation, attestations, and aggregated reputation
-- Keep costs low by anchoring commitments on‑chain while storing rich evidence off‑chain
+- Keep costs low by anchoring commitments on‑chain while storing rich evidence off‑chain (or permanent storage such as Autonomys DSN)
+- Interoperate with ERC‑8004 registries when present; provide mappings and fallbacks
 
 ### On‑chain registry interface (minimal)
+
+Note: This generic interface maps to ERC‑8004 Identity and Reputation registries; see the ERC‑8004 compatibility section below.
 
 - Subject identifier: URL or [DID](../glossary.md#did-decentralized-identifier) (e.g., `did:web`), optional additional ids (`did:key`, `did:pkh`)
 - Verification material pointer: [JWKS](../glossary.md#jwks-json-web-key-set) URI or DID Document hash
@@ -97,6 +100,8 @@ Suggested attestation fields (JSON)
 - Validation: support publishing `ValidationRequestsURI`/`ValidationResponsesURI` and interacting with `ValidationRequest/Response` events while keeping `DataHash` resolvable via permanent URIs
 - Discovery: include `trustModels[]` to communicate which trust paths are supported by the server agent
 
+See also: [ERC‑8004 impact analysis](../erc-8004/erc-8004-impact.md)
+
 ### Open questions
 
 - What governance model maintains the registry (DAO, multi‑sig, enterprise CA)?
@@ -108,3 +113,6 @@ Suggested attestation fields (JSON)
 - Google Developer forums: “Understanding A2A — The protocol for agent collaboration” (https://discuss.google.dev/t/understanding-a2a-the-protocol-for-agent-collaboration/189103)
 - A2A overview: https://a2a-protocol.org/latest/topics/what-is-a2a/
 - A2A specification: https://a2a-protocol.org/latest/specification/
+- ERC‑8004: Trustless Agents — https://eips.ethereum.org/EIPS/eip-8004
+- Discussion: https://ethereum-magicians.org/t/erc-8004-trustless-agents/25098
+- ERC‑8004 impact analysis: ../erc-8004/erc-8004-impact.md
