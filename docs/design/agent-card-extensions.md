@@ -19,6 +19,9 @@ Purpose: propose fields to capture multi‑scheme identity, on‑chain coordinat
 - `trustModels`: advertised server‑side trust models (per ERC‑8004): `feedback`, `inference-validation`, `tee-attestation`
 - `artifactSigningPolicy`: whether artifacts are signed, and expected algorithms
 - `pushJwtRules`: expected claims and issuer/subject mapping for push notifications
+- `payments`: payment policy and supported methods (see payments doc)
+- `billingEndpoints`: URLs for billing APIs (invoices, receipts, usage)
+  - Optional micro/aggregate endpoints when aggregated micropayments are supported
 
 ### Example (illustrative)
 
@@ -67,7 +70,24 @@ Purpose: propose fields to capture multi‑scheme identity, on‑chain coordinat
   ],
   "trustModels": ["feedback", "inference-validation", "tee-attestation"],
   "artifactSigningPolicy": { "enabled": true, "alg": ["RS256", "EdDSA"] },
-  "pushJwtRules": { "iss": "https://agent.example", "aud": "client-webhook" }
+  "pushJwtRules": { "iss": "https://agent.example", "aud": "client-webhook" },
+  "payments": {
+    "methods": ["fiat:stripe", "crypto:eip155:8453:USDC"],
+    "currencies": ["USD", "USDC"],
+    "pricing": {
+      "model": "usage",
+      "unit": "request",
+      "rate": 0.002,
+      "currency": "USD"
+    }
+  },
+  "billingEndpoints": {
+    "invoices": "https://agent.example/billing/invoices",
+    "receipts": "https://agent.example/billing/receipts",
+    "usage": "https://agent.example/billing/usage",
+    "microReceipts": "https://agent.example/billing/micro/receipt",
+    "microAggregate": "https://agent.example/billing/micro/aggregate"
+  }
 }
 ```
 

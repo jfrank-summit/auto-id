@@ -34,6 +34,7 @@ As multi‑agent ecosystems scale, bespoke identity integrations lead to O(N²) 
 - Continuity and rotation: safe key rollover, revocation, recovery, compromise handling
 - Auditability: signed task updates, artifact integrity, verifiable logs
 - Privacy and selective disclosure: minimize linkage, support pseudonymous operation
+- Economic settlement: pricing discovery, billing endpoints, signed invoices/receipts, and settlement proofs (fiat or crypto)
 - Operability: straightforward developer ergonomics, automations, and tooling
 
 ### Requirements and constraints
@@ -45,6 +46,7 @@ As multi‑agent ecosystems scale, bespoke identity integrations lead to O(N²) 
 - Strong key management: rotation, revocation, hardware support where available
 - Enterprise posture: policy, audit, compliance hooks; clear failure and recovery paths
 - Performance and cost: lightweight verification, caching, and reasonable latency
+- Payment integration: billing endpoints, JWT-authenticated webhooks, offline-verifiable invoices/receipts; adapters for fiat and crypto
 
 ### Design space (non‑exclusive)
 
@@ -91,6 +93,7 @@ As multi‑agent ecosystems scale, bespoke identity integrations lead to O(N²) 
 - Artifacts and long‑running task updates benefit from detached signatures for auditability and dispute resolution
 - Stateless interactions and streaming favor lightweight, cacheable verification materials
 - Prefer storing artifacts and evidentiary materials on the Autonomys DSN via Auto Drive using CIDs; treat this as permanent storage "off" the registry chain
+- Billing integration: advertise payments policy and `billingEndpoints` in the Agent Card; authenticate processor webhooks with JWT; bind invoices/receipts to A2A `task.id` and include transaction references when applicable
 
 ### Minimal viable identity (MVI) for Auto‑ID
 
@@ -166,3 +169,4 @@ If adopted, Auto‑ID will provide a layered, practical identity foundation: eas
 - Blockchain coordination addendum: [design/blockchain-coordination.md](../design/blockchain-coordination.md)
 - Agent Card extensions (draft): [design/agent-card-extensions.md](../design/agent-card-extensions.md)
 - Identity options evaluation matrix (template): [research/evaluation-matrix.md](../research/evaluation-matrix.md)
+- Payments integration: [design/payments-integration.md](../design/payments-integration.md)

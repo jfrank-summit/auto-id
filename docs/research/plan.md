@@ -56,6 +56,17 @@ Purpose: deliver a practical, A2A‑native identity baseline with clear interfac
      - Agent Card fields for on‑chain coordinates (enabled but not required)
 
 6. Optional: ERC‑8004 compatibility
+7. Payments integration
+
+   - Deliverables:
+
+     - Payments integration design and policy (Agent Card `payments`, `billingEndpoints`)
+     - Invoice/Receipt JWS schemas and validator scripts
+     - Adapters: Stripe (fiat), EVM ERC‑20 transfer checker (USDC on Base), Coinbase Commerce
+     - Billing API sketch for demo‑agent (`/billing/*`)
+     - Examples: end‑to‑end task with invoice and receipt
+     - Optional: aggregated micropayments adapter (off‑chain receipts + redeemable aggregate voucher)
+
    - Deliverables:
      - Agent Card `registrations[]` and `trustModels[]` support
      - Reader/writer utilities for Identity, Reputation, and Validation registries (EVM testnet)
@@ -69,6 +80,7 @@ Purpose: deliver a practical, A2A‑native identity baseline with clear interfac
 - ReputationAttestation: issuer, subject, event, task refs, artifacts, evidence, issuedAt/expiresAt
   - Evidence/artifacts should support DSN CIDs and optional `gatewayUri`
 - BatchManifest (optional): list of attestation hashes + Merkle metadata
+- Invoice/Receipt JWS payloads and signature profiles
 
 ### Prototype layout (suggested)
 

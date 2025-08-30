@@ -35,6 +35,7 @@
 - Agent Card extensions (draft): [design/agent-card-extensions.md](./design/agent-card-extensions.md)
 - Blockchain coordination addendum: [design/blockchain-coordination.md](./design/blockchain-coordination.md)
 - ERC‑8004 impact analysis: [erc-8004/erc-8004-impact.md](./erc-8004/erc-8004-impact.md)
+- Payments integration: [design/payments-integration.md](./design/payments-integration.md)
 - Identity options evaluation matrix (template): [research/evaluation-matrix.md](./research/evaluation-matrix.md)
 - Potential execution plan: [research/plan.md](./research/plan.md)
 
