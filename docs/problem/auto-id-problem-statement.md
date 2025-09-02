@@ -121,18 +121,18 @@ As multi‑agent ecosystems scale, bespoke identity integrations lead to O(N²) 
 
 Deliver an evidence‑based recommendation and a working reference implementation. Phases:
 
-1. Landscape and criteria (1–2 weeks)
+1. Landscape and criteria
 
    - Compile evaluation matrix across schemes (security, interop, ops, privacy, cost)
    - Map A2A requirements to identity capabilities; identify gaps
 
-2. Prototypes (2–4 weeks total, can run in parallel)
+2. Prototypes
 
    - Agent Card generator: library/CLI to emit valid `/.well-known/agent.json` with multi‑scheme auth declarations and optional JWKS or DID Document
    - Auth adapters: pluggable verification for API key, OAuth2/OIDC, mTLS, JWT/JWKS; optional DID/VC verification for `did:web` and `did:key`
    - E2E demo: two agents exchanging messages via A2A `message/send` and `message/stream`, using different identity schemes; JWT‑signed push; artifact signing and verification
 
-3. Usability and ops hardening (1–2 weeks)
+3. Usability and ops hardening
 
    - Key rotation automation; revocation flows; incident drills
    - Caching and offline verification strategy; performance testing
@@ -140,13 +140,6 @@ Deliver an evidence‑based recommendation and a working reference implementatio
 4. Decision and rollout
    - Present trade‑offs and recommended default stack (with fallbacks)
    - Publish reference docs, examples, and checklists for teams
-
-Success criteria
-
-- Interoperates with A2A‑compliant peers using at least two distinct auth schemes
-- Supports offline verification of push notifications and artifact signatures
-- Demonstrates seamless key rotation without consumer outages
-- Minimal developer friction to adopt and operate
 
 ### Open questions
 
