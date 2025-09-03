@@ -38,8 +38,10 @@
 - ERC‑8004 impact analysis: [erc-8004/erc-8004-impact.md](./erc-8004/erc-8004-impact.md)
 - Payments integration: [design/payments-integration.md](./design/payments-integration.md)
 - Identity options evaluation matrix (template): [research/evaluation-matrix.md](./research/evaluation-matrix.md)
-- Potential execution plan: [research/plan.md](./research/plan.md)
 - Deployment architectures: [design/deployment-architectures.md](./design/deployment-architectures.md)
+- Potential execution plan: [planning/plan.md](./research/plan.md)
+
+- Milestones: [planning/milestones.md](./research/milestones.md)
 
 ### Examples
 
