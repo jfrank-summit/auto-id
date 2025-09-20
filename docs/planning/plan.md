@@ -75,6 +75,14 @@ Purpose: deliver a practical, A2A‑native identity baseline with clear interfac
      - Examples: end‑to‑end task with invoice and receipt
      - Optional: aggregated micropayments adapter (off‑chain receipts + redeemable aggregate voucher)
 
+   - Optional AP2 compatibility:
+
+     - Add AP2 Mandate (Intent/Cart) schemas and signature profile (VC/JWS)
+     - Extend Agent Card with AP2 `payments` fields and endpoints
+     - Implement Mandate resolver endpoints (`mandatesURI`, `receiptsURI`)
+     - x402 crypto rail integration (stablecoins via CAIP‑10/19)
+     - Update docs: link to `design/ap2-impact.md` and `design/payments-integration.md`
+
    - Deliverables:
      - Agent Card `registrations[]` and `trustModels[]` support
      - Reader/writer utilities for Identity, Reputation, and Validation registries (EVM testnet)

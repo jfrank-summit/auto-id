@@ -21,7 +21,8 @@ Purpose: propose fields to capture multi‑scheme identity, on‑chain coordinat
 - `trustModels`: advertised server‑side trust models (per ERC‑8004): `feedback`, `inference-validation`, `tee-attestation`
 - `artifactSigningPolicy`: whether artifacts are signed, and expected algorithms
 - `pushJwtRules`: expected claims and issuer/subject mapping for push notifications
-- `payments`: payment policy and supported methods (see payments doc)
+- `payments`: payment policy and supported methods (see payments doc); when using AP2, include:
+  - `protocol: "ap2"`, `mandateTypes: ["intent", "cart"]`, `paymentMethods`, optional `x402: true|false`, and `endpoints` for `mandatesURI`/`receiptsURI`
 - `billingEndpoints`: URLs for billing APIs (invoices, receipts, usage)
   - Optional micro/aggregate endpoints when aggregated micropayments are supported
 

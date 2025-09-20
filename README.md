@@ -21,6 +21,7 @@ See [`docs/`](./docs/) for complete documentation, including:
 - [Problem Statement](./docs/problem/auto-id-problem-statement.md)
 - [Agent Card Extensions](./docs/design/agent-card-extensions.md)
 - [Payments Integration](./docs/design/payments-integration.md)
+- [AP2 impact analysis](./docs/design/ap2-impact.md)
 - [Deployment Architectures](./docs/design/deployment-architectures.md)
 - [Glossary](./docs/glossary.md)
 

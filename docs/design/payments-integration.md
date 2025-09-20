@@ -15,6 +15,7 @@ Purpose: define how agents advertise pricing and accept payments, and how client
 - Charges are tied to A2A task identifiers and artifact IDs; invoices and receipts are signed ([JWS](../glossary.md#jws-json-web-signature)) and can be validated offline.
 - Fiat and crypto payment adapters are pluggable; receipts normalize to a common schema.
 - For crypto, small payments can use streaming or pre‑funded allowances; larger ones use invoice/escrow patterns.
+- When AP2 is enabled, payments are driven by signed Mandates (Intent → Cart) that form an auditable chain of authorization and authenticity before settlement.
 
 ### Agent Card additions
 
@@ -49,6 +50,11 @@ See `design/agent-card-extensions.md` for the full example.
 
 - For high‑frequency, low‑value interactions, use off‑chain signed receipts that periodically aggregate into a single on‑chain redeemable voucher. The receiver (or an aggregator) accepts signed receipts per request and issues an aggregated voucher that is redeemed on‑chain under risk bounds configured by the receiver. This reduces on‑chain costs while maintaining cryptographic accountability.
 
+6. AP2 Mandate‑driven flows
+
+- Real‑time (human present): capture an Intent Mandate during the session; after cart presentation, sign a Cart Mandate that binds exact items and price; execute payment via chosen rail; store Mandates and receipts off‑chain with content hashes.
+- Delegated (human not present): pre‑authorize with a detailed Intent Mandate (caps, categories, windows); the agent generates a Cart Mandate upon condition satisfaction; proceed to payment; notify via JWT‑signed push with references.
+
 ### Data structures (JWS payloads)
 
 - Invoice
@@ -62,7 +68,13 @@ See `design/agent-card-extensions.md` for the full example.
 - Micropayment Receipt (off‑chain)
   - `{ type: "MicroReceipt", version: "v1", sender, receiver, task: { id }, unit, amount, currency, createdAt, nonce, sessionId, aggregator?, id }`
 - Aggregated Voucher (redeemable)
+
   - `{ type: "AggregateVoucher", version: "v1", receiver, receipts: { count, amount }, currency, window: { start, end }, sessionId, redeemChain, contract, redeemDataHash, createdAt, last, id }`
+
+- AP2 Mandate (Intent)
+  - `{ type: "MandateIntent", version: "v1", subject, constraints: { maxTotal, categories?, deadline? }, context: { query?, preferences? }, createdAt, id }`
+- AP2 Mandate (Cart)
+  - `{ type: "MandateCart", version: "v1", subject, items: [...], total, currency, terms?: {...}, intentId, createdAt, id }`
 
 All JWS `issuer` keys resolve via Agent Card `jwks_uri` or DID Document; `subject` is the paying agent/client identifier.
 
@@ -82,6 +94,7 @@ All JWS `issuer` keys resolve via Agent Card `jwks_uri` or DID Document; `subjec
 - Wallets/escrow as CAIP‑10 addresses; proofs of control provided via EIP‑191 message signatures.
 - For escrow, contract ABI and chain ID are included in `escrow` with link to policy.
 - Aggregated vouchers redeemed on configured chain; risk parameters bound by policy.
+- For AP2 crypto rails, consider A2A x402 for stablecoin settlement; advertise CAIP‑10/19 coordinates in Agent Card when enabled.
 
 ### Security and compliance
 
@@ -89,10 +102,12 @@ All JWS `issuer` keys resolve via Agent Card `jwks_uri` or DID Document; `subjec
 - Webhooks for processors (e.g., Stripe) must be JWT‑authenticated and replay‑protected
 - Privacy: invoices/receipts omit sensitive PII; store minimal details off‑chain; evidence links via CIDs when needed
 - Micropayments: enforce nonce/session anti‑replay; cap receiver exposure via configured max outstanding amount; aggregate windows signed by receiver
+- AP2: Mandates are signed (VC/JWS) and bound to agent/user identity; maintain a non‑repudiable audit trail from intent → cart → payment
 
 ### Interop with reputation
 
 - Optionally emit `ReputationAttestation` events for payment reliability (e.g., timely payment) or disputes, referencing invoice/receipt IDs and task IDs.
+- For AP2, include Mandate IDs in attestations to strengthen linkage between behavior and authorization.
 
 ### Developer experience
 

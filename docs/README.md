@@ -36,6 +36,7 @@
 - Identifiers & uniqueness: [design/identifiers-and-uniqueness.md](./design/identifiers-and-uniqueness.md)
 - Blockchain coordination addendum: [design/blockchain-coordination.md](./design/blockchain-coordination.md)
 - ERC‑8004 impact analysis: [erc-8004/erc-8004-impact.md](./erc-8004/erc-8004-impact.md)
+- AP2 impact analysis: [design/ap2-impact.md](./design/ap2-impact.md)
 - Payments integration: [design/payments-integration.md](./design/payments-integration.md)
 - Identity options evaluation matrix (template): [research/evaluation-matrix.md](./research/evaluation-matrix.md)
 - Deployment architectures: [design/deployment-architectures.md](./design/deployment-architectures.md)

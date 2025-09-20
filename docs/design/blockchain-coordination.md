@@ -100,7 +100,7 @@ Suggested attestation fields (JSON)
 - Validation: support publishing `ValidationRequestsURI`/`ValidationResponsesURI` and interacting with `ValidationRequest/Response` events while keeping `DataHash` resolvable via permanent URIs
 - Discovery: include `trustModels[]` to communicate which trust paths are supported by the server agent
 
-See also: [ERC‑8004 impact analysis](../erc-8004/erc-8004-impact.md)
+See also: [ERC‑8004 impact analysis](../erc-8004/erc-8004-impact.md) and [AP2 impact analysis](./ap2-impact.md)
 
 ### Open questions
 

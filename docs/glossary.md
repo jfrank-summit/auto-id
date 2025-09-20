@@ -12,6 +12,10 @@
 - [DSN](#dsn-decentralized-storage-network)
 - [EIP‑191](#eip-191)
 - [ERC‑8004](#erc-8004-trustless-agents)
+- [AP2](#ap2-agent-payments-protocol)
+- [Mandate](#mandate-intent-and-cart)
+- [VC](#vc-verifiable-credential)
+- [x402](#x402-a2a-crypto-payments-extension)
 - [EVM](#evm-ethereum-virtual-machine)
 - [JWK](#jwk-json-web-key)
 - [JWKS](#jwks-json-web-key-set)
@@ -73,6 +77,22 @@ Ethereum signing standard for human‑readable messages.
 ### ERC‑8004 (Trustless Agents)
 
 EVM‑based registry interfaces for agent identity, reputation, and validation.
+
+### AP2 (Agent Payments Protocol)
+
+Open, payment‑agnostic protocol for secure agent‑led payments across platforms; complements A2A and MCP. Introduces cryptographically signed Mandates (Intent, Cart) as verifiable evidence linking user authorization to executed payments; supports multiple rails including cards, bank transfers, and stablecoins. See `design/ap2-impact.md`.
+
+### Mandate (Intent and Cart)
+
+Tamper‑evident, signed payment instructions used by AP2. An Intent Mandate captures user goals and constraints (e.g., budget, timing); a Cart Mandate commits to exact items and price before execution, forming a non‑repudiable audit trail.
+
+### VC (Verifiable Credential)
+
+W3C data model for cryptographically verifiable claims; used to sign Mandates in AP2 and for selective disclosure when needed.
+
+### x402 (A2A crypto payments extension)
+
+An extension to A2A/AP2 for agent‑based crypto payments, enabling stablecoin and blockchain rails; see `https://github.com/google-a2a/a2a-x402` and `design/ap2-impact.md`.
 
 ### EVM (Ethereum Virtual Machine)
 
