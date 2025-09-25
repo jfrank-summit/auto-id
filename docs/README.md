@@ -56,6 +56,7 @@
 
 - Background: [references/agent-autonomy.md](./references/agent-autonomy.md)
 - Centralization limits: [references/centralization-limits-agent-autonomy.md](./references/centralization-limits-agent-autonomy.md)
+- [Coinbase and Cloudflare will launch x402 foundation](https://www.coinbase.com/blog/coinbase-and-cloudflare-will-launch-x402-foundation)
 - Glossary: [glossary.md](./glossary.md)
 
 ### Suggested reading order

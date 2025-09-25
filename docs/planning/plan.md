@@ -1,4 +1,4 @@
-## Auto‑ID: Detailed Execution Plan (Timeline‑Free)
+## Auto‑ID: Detailed Execution Plan
 
 Purpose: deliver a practical, A2A‑native identity baseline with clear interfaces, working prototypes, and objective acceptance criteria.
 
