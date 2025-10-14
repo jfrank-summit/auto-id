@@ -23,6 +23,7 @@ References:
 - A2A overview — `https://a2a-protocol.org/latest/topics/what-is-a2a/`
 - A2A specification — `https://a2a-protocol.org/latest/specification/`
 - A2A x402 (crypto payments) — `https://github.com/google-a2a/a2a-x402`
+- Privy X post - `https://x.com/privy_io/status/1978083505100710375`
 
 ### Alignment with Auto‑ID baseline
 
